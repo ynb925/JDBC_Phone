@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb32412b-b2de-4b66-b563-17e5a0645541" name="Changes" comment="first init project">
+    <list default="true" id="bb32412b-b2de-4b66-b563-17e5a0645541" name="Changes" comment="test db with simple code">
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/example/Phone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/example/Phone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/example/PhoneDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/example/PhoneDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/co/example/RunPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/example/RunPhone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +30,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
@@ -53,6 +61,14 @@
       </RecentBranches>
     </option>
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d22e7fb2-3e79-4178-8096-a6da117e73a5" />
+        <option name="url" value="https://github.com/ynb925/JDBC_Phone.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -75,10 +91,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/ynb4m/IdeaProjects/postgresql-42.2.22",
+    "last_opened_file_path": "C:/Users/ynb4m/IdeaProjects/JDBC_Phone",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="Push.Settings">
@@ -106,6 +123,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first init project" />
-    <option name="LAST_COMMIT_MESSAGE" value="first init project" />
+    <MESSAGE value="test db with simple code" />
+    <option name="LAST_COMMIT_MESSAGE" value="test db with simple code" />
   </component>
 </project>
