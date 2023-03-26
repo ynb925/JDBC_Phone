@@ -28,6 +28,7 @@ public class PhoneDAO {
         dataSource.setURL("jdbc:postgresql://localhost:5432/postgres");
         dataSource.setUser("postgres");
         dataSource.setPassword("admin5555");
+
         try {
             connection = dataSource.getConnection();
         } catch (SQLException e) {
@@ -43,32 +44,8 @@ public class PhoneDAO {
         }
     }
 
-    public static final String createSQL = """
-            INSERT INTO phone(
-            	 "userName", "phoneNumber")
-            	VALUES ( ?, ?);
-            """;
-    public static final String deleteSQL = """
-            DELETE FROM phone
-            WHERE id=?;
-            """;
-    public static final String updateSQL = """
-             UPDATE phone
-             SET "userName"=?,
-            "phoneNumber"=?
-             WHERE id=?;
-             """;
-    public static final String findAll = """
-            SELECT *
-            FROM phone
-            """;
-    public static final String findByIdSQL = findAll + """                           
-            WHERE id=?
-            """;
-
-
     public Phone create(Phone phone) {
-        try (var prepareStatement = connection.prepareStatement(createSQL, Statement.RETURN_GENERATED_KEYS)) {
+        try (var prepareStatement = connection.prepareStatement(SqlConstants.createSQL, Statement.RETURN_GENERATED_KEYS)) {
             prepareStatement.setString(1, phone.getUserName());
             prepareStatement.setString(2, phone.getPhoneNumber());
 
@@ -84,7 +61,7 @@ public class PhoneDAO {
     }
 
     public Boolean delete(long id) {
-        try (var prepareStatement = connection.prepareStatement(deleteSQL)) {
+        try (var prepareStatement = connection.prepareStatement(SqlConstants.deleteSQL)) {
             prepareStatement.setLong(1, id);
 
             return prepareStatement.executeUpdate() > 0;
@@ -94,7 +71,7 @@ public class PhoneDAO {
     }
 
     public Phone update(Phone phone) {
-        try (var prepareStatement = connection.prepareStatement(updateSQL)) {
+        try (var prepareStatement = connection.prepareStatement(SqlConstants.updateSQL)) {
             prepareStatement.setString(1, phone.getUserName());
             prepareStatement.setString(2, phone.getPhoneNumber());
             prepareStatement.setInt(3, (int) phone.getId());
@@ -108,7 +85,7 @@ public class PhoneDAO {
     }
 
     public Optional<Phone> findById(int id) {
-        try (var preparedStatement = connection.prepareStatement(findByIdSQL)) {
+        try (var preparedStatement = connection.prepareStatement(SqlConstants.findByIdSQL)) {
             preparedStatement.setLong(1, id);
             var resultSet = preparedStatement.executeQuery();
 
@@ -122,9 +99,8 @@ public class PhoneDAO {
         }
     }
 
-    private static Phone phoneBuilder(ResultSet resultSet) {
-        Phone phone;
-        phone = new Phone();
+    private Phone phoneBuilder(ResultSet resultSet) {
+        Phone phone = new Phone();
         try {
             phone.setId(resultSet.getLong("id"));
             phone.setUserName(resultSet.getString("userName"));
@@ -136,7 +112,7 @@ public class PhoneDAO {
     }
 
     public List<Phone> findAll() {
-        try (var preparedStatement = connection.prepareStatement(findAll)) {
+        try (var preparedStatement = connection.prepareStatement(SqlConstants.findAll)) {
             var resultSet = preparedStatement.executeQuery();
             List<Phone> phones = new ArrayList<>();
             while (resultSet.next()) {
