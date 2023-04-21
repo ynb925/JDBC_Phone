@@ -77,6 +77,7 @@ public class PhoneDAO {
             prepareStatement.setInt(3, (int) phone.getId());
 
             var resultSet = prepareStatement.executeUpdate();
+            System.out.println(resultSet);
 
             return phone;
         } catch (SQLException e) {
